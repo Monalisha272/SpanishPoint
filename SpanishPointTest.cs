@@ -40,15 +40,15 @@ namespace SeleniumAutomation
             var supportedProductsHeading = driver.FindElement(By.XPath("//h3[contains(text(),'There are several types of Product Supported:')]"));
             Assert.That(supportedProductsHeading.Displayed, "Supported products heading is not displayed.");
 
-            //var supportedProductsList = driver.FindElements(By.XPath("//h3[contains(text(),'There are several types of Product Supported:')]/following-sibling::ul/li"));
-            //Assert.That(supportedProductsList.Count, Is.GreaterThan(0), "Supported products list is empty.");
+            var supportedProductsList = driver.FindElements(By.XPath("//h3[contains(text(),'There are several types of Product Supported:')]/following-sibling::ul/li"));
+            Assert.That(supportedProductsList.Count, Is.GreaterThan(0), "Supported products list is empty.");
 
 
-        //     Console.WriteLine("Supported products:");
-        //     foreach (var product in supportedProductsList)
-        //     {
-        //         Console.WriteLine(product.Text);
-        //     }
+            Console.WriteLine("Supported products:");
+             foreach (var product in supportedProductsList)
+             {
+                 Console.WriteLine(product.Text);
+             }
          }
 
         [TearDown]
